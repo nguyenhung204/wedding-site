@@ -8,16 +8,6 @@ import BottomToolbar from "@/components/ui/BottomToolbar";
 import AutoScroll from "@/components/ui/AutoScroll";
 
 import Hero from "@/components/sections/Hero";
-import CountdownInvitation from "@/components/sections/CountdownInvitation";
-import Ceremony from "@/components/sections/Ceremony";
-import Party from "@/components/sections/Party";
-import MarryMe from "@/components/sections/MarryMe";
-import AboutUs from "@/components/sections/AboutUs";
-import SaveTheDate from "@/components/sections/SaveTheDate";
-import Gallery from "@/components/sections/Gallery";
-import Rsvp from "@/components/sections/Rsvp";
-import Gift from "@/components/sections/Gift";
-import ThankYou from "@/components/sections/ThankYou";
 
 interface Props {
   guestGreeting?: string;
@@ -38,18 +28,8 @@ export default function WeddingCard({ guestGreeting, guestName }: Props) {
       <LoadingSplash show={loading} />
       {config.effects.petals && opened && <PetalEffect />}
 
-      <main className="card-canvas">
+      <main className={`card-canvas ${opened ? "is-opened" : ""}`}>
         <Hero guestGreeting={guestGreeting} guestName={guestName} onOpen={() => setOpened(true)} />
-        <CountdownInvitation />
-        <Ceremony />
-        <Party />
-        <MarryMe />
-        <AboutUs />
-        <SaveTheDate />
-        <Gallery />
-        <Rsvp defaultName={guestName} />
-        <Gift />
-        <ThankYou />
       </main>
 
       <AudioPlayer

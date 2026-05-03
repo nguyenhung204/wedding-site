@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import config from "@/lib/config";
 import SectionReveal from "@/components/ui/SectionReveal";
 
@@ -43,14 +44,8 @@ export default function Gift() {
           className="mt-6 flex flex-col items-center mx-auto"
           aria-label={config.gifts.label}
         >
-          {/* Stylised gift box */}
-          <div className="float-gentle relative h-24 w-28">
-            <div className="absolute inset-x-0 bottom-0 top-6 rounded-md bg-pink-200 shadow-md" />
-            <div className="absolute inset-x-2 bottom-0 top-7 grid grid-cols-2 rounded-b-md">
-              <div className="border-r-2 border-pink-100" />
-            </div>
-            <div className="absolute -top-1 inset-x-3 h-7 rounded bg-pink-300 shadow-sm" />
-            <span className="absolute left-1/2 top-0 -translate-x-1/2 text-2xl text-rose-500">♡</span>
+          <div className="float-gentle relative h-28 w-32">
+            <Image src={config.photos.illustrations.giftBox} alt="" fill sizes="128px" className="object-contain" />
           </div>
           <span className="mt-3 font-cormorant tracking-widest text-[#cb6e6e]">
             {config.gifts.label}

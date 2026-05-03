@@ -29,7 +29,7 @@ export default function SaveTheDate() {
       <SectionReveal delay={0.15}>
         <div className="relative mx-auto mt-6 w-full max-w-[400px]">
           {/* Photo */}
-          <div className="relative aspect-[3/4] overflow-hidden rounded-md shadow-md">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-[3px] shadow-md">
             <Image src={config.photos.saveTheDate} alt="" fill sizes="400px" className="object-cover" />
           </div>
 
@@ -71,7 +71,7 @@ export default function SaveTheDate() {
       </SectionReveal>
 
       <SectionReveal delay={0.3}>
-        <div className="mx-auto mt-6 grid max-w-[360px] grid-cols-2 gap-4 text-[#7e4f4f]">
+        <div className="mx-auto mt-6 grid max-w-[360px] grid-cols-3 gap-3 text-[#7e4f4f]">
           {config.party.schedule.map((s) => (
             <div key={s.time} className="flex items-center gap-3">
               <span className="font-cormorant text-2xl text-[#9c3e3e]">{s.time}</span>
