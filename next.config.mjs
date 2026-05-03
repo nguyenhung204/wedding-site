@@ -16,6 +16,12 @@ const nextConfig = {
       { protocol: "https", hostname: "img.vietqr.io" },
     ],
   },
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.cache = false;
+    }
+    return config;
+  },
 };
 
 export default nextConfig;

@@ -41,11 +41,10 @@ body {
   background: var(--bg);
   position: relative;
   overflow: hidden;
-  min-height: 8264px;
+  min-height: 682px;
   box-shadow: 0 0 40px rgba(60, 30, 30, 0.08);
 }
 
-.card-canvas:not(.is-opened) > section:not(:first-child) { opacity: 0.18; }
 .card-canvas:not(.is-opened)::after {
   content: "";
   position: fixed;
@@ -56,8 +55,8 @@ body {
 }
 .card-canvas:not(.is-opened) > .cinelove-hero { z-index: 1000; }
 
-.card-canvas.is-opened > .cinelove-hero {
-  margin-bottom: 0;
+.card-canvas.is-opened {
+  min-height: 8264px;
 }
 
 @layer utilities {
@@ -78,7 +77,7 @@ body {
 
 .card-canvas.is-opened .cinelove-hero {
   position: relative;
-  height: 8264px;
+  height: 682px;
   z-index: 1000;
 }
 
@@ -88,11 +87,6 @@ body {
   height: 286.734px;
   margin: 0 auto;
   perspective: 900px;
-}
-
-.card-canvas.is-opened .cinelove-envelope-wrap {
-  transform: scale(0.64);
-  transform-origin: top left;
 }
 
 .cinelove-envelope-shadow {
@@ -177,12 +171,20 @@ body {
   margin-left: auto;
   margin-right: auto;
   height: 90%;
-  top: 5%;
+  top: 32%;
   border-radius: 6px;
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
   transition: transform 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s, box-shadow 0.3s ease;
   overflow: hidden;
   z-index: 2;
+}
+
+.cinelove-hero.is-opened .cinelove-letter {
+  top: 5%;
+}
+
+.cinelove-envelope.close .cinelove-letter {
+  opacity: 0;
 }
 
 .cinelove-letter::after {
