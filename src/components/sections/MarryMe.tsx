@@ -19,8 +19,8 @@ export default function MarryMe() {
       </SectionReveal>
 
       <SectionReveal delay={0.2}>
-        <div className="relative mx-auto mt-8 grid w-full max-w-[420px] grid-cols-[1fr,80px] gap-4">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-md shadow-md">
+        <div className="relative mx-auto mt-8 grid w-full max-w-[420px] grid-cols-[1fr,82px] gap-4">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-[3px] shadow-md">
             <Image
               src={config.photos.marryMeMain}
               alt=""
@@ -35,6 +35,12 @@ export default function MarryMe() {
             <span className="mt-2 text-2xl tracking-[0.3em]">I DO</span>
             <span className="mt-2 text-pink-300/80">♡</span>
           </div>
+        </div>
+      </SectionReveal>
+
+      <SectionReveal delay={0.3}>
+        <div className="relative mx-auto mt-5 h-36 w-36">
+          <Image src={config.photos.illustrations.dancingCouple} alt="" fill sizes="144px" className="object-contain" />
         </div>
       </SectionReveal>
     </section>

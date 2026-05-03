@@ -16,7 +16,7 @@ export default function AboutUs() {
         <div className="mx-auto mt-8 grid max-w-[420px] grid-cols-2 gap-3">
           {/* Bride card */}
           <div className="relative">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-md shadow-sm">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[3px] shadow-sm">
               <Image src={bride.portrait} alt={bride.fullName} fill sizes="200px" className="object-cover" />
             </div>
             <div className="absolute -right-2 top-1/2 -translate-y-1/2 rotate-90 origin-center font-script text-2xl text-[#cb8d8d]">
@@ -37,7 +37,7 @@ export default function AboutUs() {
             <p className="mt-1 text-lg text-[#b78a8a]">{groom.hometown}</p>
           </div>
           <div className="relative">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-md shadow-sm">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[3px] shadow-sm">
               <Image src={groom.portrait} alt={groom.fullName} fill sizes="200px" className="object-cover" />
             </div>
             <div className="absolute -left-2 top-1/2 -translate-y-1/2 -rotate-90 origin-center font-script text-2xl text-[#cb8d8d]">

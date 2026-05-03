@@ -4,12 +4,7 @@
  *  Sửa toàn bộ nội dung của thiệp tại đây.
  *  All wedding-card content is configured in this file.
  * ===============================================================
- *  ⚠️  Ảnh / nhạc dưới đây hiện đang trỏ tới CDN của một bên
- *      thứ ba (cinelove.me). Đó chỉ là PLACEHOLDER tạm để bạn
- *      xem layout. Vui lòng THAY bằng ảnh / nhạc của bạn trước
- *      khi đem deploy thật — các tài sản đó thuộc về cặp đôi
- *      gốc trong template, dùng đi dùng lại là không được phép.
- *  Replace all asset URLs with your own before going live.
+ *  Assets below are served locally from /public/assets.
  * ===============================================================
  */
 
@@ -22,8 +17,7 @@ export const config = {
     title: "Thiệp mời cưới | Phú Danh ❤ Lệ Giang",
     description: "Thân mời quý vị đến chung vui cùng chúng tôi.",
     locale: "vi-VN",
-    ogImage:
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/30284874-f066-4d90-8d17-99a90fe8169b.jpg?crop=0,0,0,0&resize=1000x&format=webp",
+    ogImage: "/assets/hero.jpg",
   },
 
   // --- Couple ---------------------------------------------------
@@ -33,8 +27,7 @@ export const config = {
       fullName: "Trần Phú Danh",
       birthDate: "03/09/1996",
       hometown: "Nam Định",
-      portrait:
-        "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/0d3d0e15-0b70-465e-be88-af43795261d9.jpg?crop=63,323,973,1459&resize=600x",
+      portrait: "/assets/groom-portrait.jpg",
       family: {
         title: "Nhà Trai",
         father: "Ông : Trần Phú Trường",
@@ -47,8 +40,7 @@ export const config = {
       fullName: "Ngô Lệ Giang",
       birthDate: "13/09/1999",
       hometown: "Hà Nội",
-      portrait:
-        "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/dcbc108e-32b5-428d-af03-bda8968fc9a7.jpg?crop=121,182,973,1642&resize=600x",
+      portrait: "/assets/bride-portrait.jpg",
       family: {
         title: "Nhà Gái",
         father: "Ông : Ngô Duy Hà",
@@ -85,6 +77,7 @@ export const config = {
     schedule: [
       { time: "11:00", label: "Đón khách" },
       { time: "11:30", label: "Nghi lễ" },
+      { time: "11:45", label: "Khai tiệc" },
     ],
     mapEmbedSrc:
       "https://www.google.com/maps?q=Tr%E1%BB%91ng+%C4%90%E1%BB%93ng+Palace+C%E1%BA%A3nh+H%E1%BB%93+173B+Tr%C6%B0%E1%BB%9Dng+Chinh+H%C3%A0+N%E1%BB%99i&output=embed",
@@ -99,26 +92,34 @@ export const config = {
 
   // --- Photos for sections --------------------------------------
   photos: {
-    hero:
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/30284874-f066-4d90-8d17-99a90fe8169b.jpg?crop=0,0,0,0&resize=900x&format=webp",
-    countdownBackground:
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/5f7cef5d-4bba-43bb-b504-219c569381d9.jpg?crop=0,249,1215,810&resize=900x",
-    marryMeMain:
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/997db8c7-d135-4d88-950d-088d598636cf.jpg?crop=0,373,1215,810&resize=900x&format=webp",
-    saveTheDate:
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/a5104da4-2344-4897-b8f8-4b892f90d13d.jpg?crop=0,738,1066,1066&resize=800x",
+    hero: "/assets/hero.jpg",
+    heroEnvelope: "/assets/countdown-bg.jpg",
+    countdownBackground: "/assets/hero-alt.jpg",
+    marryMeMain: "/assets/marry-me.jpg",
+    saveTheDate: "/assets/save-date.jpg",
     gallery: [
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/ae9574c-98ff-4f0a-9fcc-146171ff57ed.jpg?crop=81,477,1050,700&resize=800x",
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/755c83a9-99d2-45c0-ac8a-fc3caaa3b02a.jpg?crop=43,220,959,640&resize=800x",
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/8af5ad30-b143-4114-8488-e85700dd8d27.jpg?crop=42,392,897,598&resize=800x",
-      "https://img.cinelove.me/uploads/3dfcd63e-f350-493e-92dc-caa14f27d121/1b4e5afd-697e-47d8-887c-7e35575c94bf.jpg?crop=123,744,973,648&resize=800x",
+      "/assets/gallery-1.jpg",
+      "/assets/gallery-2.jpg",
+      "/assets/gallery-3.jpg",
+      "/assets/gallery-4.jpg",
+      "/assets/gallery-5.jpg",
     ],
+    illustrations: {
+      happiness: "/assets/double-happiness.png",
+      weddingCouple: "/assets/illustration-couple.png",
+      dancingCouple: "/assets/dancing-couple.gif",
+      giftBox: "/assets/gift-box.png",
+      loveSign: "/assets/love-sign.png",
+      weddingElement: "/assets/wedding-element.png",
+      waxSeal: "/assets/wax-seal.webp",
+      audioIcon: "/assets/audio-icon.png",
+    },
   },
 
   // --- Music ----------------------------------------------------
   audio: {
     title: "Lễ Đường - Kai Đinh",
-    src: "https://assets.cinelove.me/mp3/0e470330-e4d4-4fdc-8d99-830aab66916c.mp3",
+    src: "/assets/music.mp3",
     autoplay: true,
   },
 

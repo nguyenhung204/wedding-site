@@ -30,13 +30,12 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
   const guestLine = guestName ?? "Quý khách quý";
 
   return (
-    <section className="relative px-4 pb-12 pt-16 text-center">
-      {/* Header */}
+    <section className="relative px-4 pb-8 pt-10 text-center">
       <motion.h2
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="font-cormorant text-[26px] tracking-[0.45em] text-[#a95151]"
+        className="font-cormorant text-[26px] font-semibold tracking-[0.32em] text-[#8b2f30]"
       >
         THIỆP MỜI
       </motion.h2>
@@ -45,25 +44,23 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.8 }}
-        className="mt-4 flex items-center justify-center gap-6 text-[#3a2a2a]"
+        className="mt-7 flex items-center justify-center gap-8 text-[#211414]"
       >
-        <span className="font-script text-3xl">{groom.shortName}</span>
-        <span className="text-[#b78a8a]">&amp;</span>
-        <span className="font-script text-3xl">{bride.shortName}</span>
+        <span className="font-script-en text-[27px]">{groom.shortName}</span>
+        <span className="font-cormorant text-lg text-[#a95151]">&amp;</span>
+        <span className="font-script-en text-[27px]">{bride.shortName}</span>
       </motion.div>
 
-      {/* Double happiness symbol */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.45, duration: 0.6 }}
-        className="mx-auto mt-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#d68b8b] text-[#a95151] float-gentle"
+        className="relative z-20 mx-auto mt-2 h-11 w-11 float-gentle"
         aria-hidden
       >
-        <span className="text-2xl leading-none">囍</span>
+        <Image src={config.photos.illustrations.happiness} alt="" fill sizes="44px" className="object-contain" />
       </motion.div>
 
-      {/* Tap-to-open hint */}
       <AnimatePresence>
         {!opened && (
           <motion.p
@@ -71,17 +68,16 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.6 }}
-            className="mt-4 font-script text-xl text-[#c87a7a]"
+            className="mt-2 font-script text-[17px] text-[#d09393]"
           >
             Chạm để mở thiệp
           </motion.p>
         )}
       </AnimatePresence>
 
-      {/* Envelope */}
       <div
         className="relative mx-auto mt-8 select-none"
-        style={{ width: 320, height: 220, perspective: 900 }}
+        style={{ width: 342, height: 228, perspective: 1000 }}
       >
         <button
           onClick={open}
@@ -89,28 +85,21 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
           className="absolute inset-0 z-10 cursor-pointer focus:outline-none"
         />
 
-        {/* Envelope body */}
-        <div className="absolute inset-0 rounded-md bg-[#a13a3a] shadow-lg overflow-hidden">
-          {/* Diagonal seams */}
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, transparent 49.5%, rgba(0,0,0,0.18) 50%, transparent 50.5%), linear-gradient(45deg, transparent 49.5%, rgba(0,0,0,0.18) 50%, transparent 50.5%)",
-            }}
-          />
+        <div className="absolute inset-0 z-[2] overflow-hidden rounded-[3px] bg-[#aa4141] shadow-[0_4px_10px_rgba(70,0,0,.28)]">
+          <div className="absolute inset-x-0 top-0 h-[52%] bg-[#922525] [clip-path:polygon(0_0,100%_0,50%_100%)]" />
+          <div className="absolute inset-0 bg-[#aa4141] [clip-path:polygon(0_0,50%_52%,0_100%)]" />
+          <div className="absolute inset-0 bg-[#a43b3b] [clip-path:polygon(100%_0,50%_52%,100%_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-[55%] bg-[#a63f3f] [clip-path:polygon(0_100%,50%_0,100%_100%)]" />
         </div>
 
-        {/* Photo card sliding up out of envelope */}
         <div
-          className={`absolute inset-x-4 top-3 bottom-10 overflow-hidden rounded-md bg-white shadow-md ${
+          className={`absolute left-1/2 top-0 h-[148px] w-[306px] -translate-x-1/2 overflow-hidden rounded-[3px] bg-white shadow-[0_1px_8px_rgba(0,0,0,.18)] ${
             opened ? "letter-animate" : ""
           }`}
-          style={{ zIndex: 1 }}
+          style={{ zIndex: opened ? 3 : 1 }}
         >
           <Image
-            src={config.photos.hero}
+            src={config.photos.heroEnvelope}
             alt="Hình cưới"
             fill
             sizes="320px"
@@ -119,10 +108,9 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
           />
         </div>
 
-        {/* Envelope flap (folds open) */}
         <div
           className={`absolute inset-x-0 top-0 origin-top ${opened ? "flap-animate" : ""}`}
-          style={{ height: 110, zIndex: 3 }}
+          style={{ height: 114, zIndex: opened ? 1 : 4 }}
         >
           <div
             aria-hidden
@@ -130,33 +118,21 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
             style={{
               clipPath: "polygon(0 0, 100% 0, 50% 100%)",
               background:
-                "linear-gradient(180deg, #a13a3a 0%, #762626 100%)",
-              boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+                "linear-gradient(180deg, #8d2525 0%, #762020 100%)",
+              boxShadow: "0 1px 4px rgba(0,0,0,0.25)",
             }}
           />
         </div>
 
-        {/* Wax seal (always on top) */}
         <div
           aria-hidden
-          className={`absolute left-1/2 top-1/2 z-[4] h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full transition-opacity ${
+          className={`absolute left-1/2 top-1/2 z-[5] h-10 w-10 -translate-x-1/2 -translate-y-1/2 transition-opacity ${
             opened ? "opacity-0" : "opacity-100"
           }`}
-          style={{
-            background:
-              "radial-gradient(circle at 35% 35%, #c08a4a, #6e3f17 70%)",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.4), inset 0 0 6px rgba(0,0,0,0.5)",
-          }}
         >
-          <svg viewBox="0 0 24 24" className="h-full w-full p-2 opacity-70">
-            <path
-              d="M12 19s-7-4.5-7-9.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 7 3.5C19 14.5 12 19 12 19Z"
-              fill="#fff7e8"
-            />
-          </svg>
+          <Image src={config.photos.illustrations.waxSeal} alt="" fill sizes="40px" className="object-contain" />
         </div>
 
-        {/* Hearts bursting upward */}
         {opened && (
           <div className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-0">
             {Array.from({ length: 8 }).map((_, i) => {
@@ -189,18 +165,17 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         )}
       </div>
 
-      {/* Greeting */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
-        className="mt-12"
+        className="mt-5"
       >
-        <p className="font-cormorant tracking-[0.3em] text-[#a95151]">
+        <p className="font-cormorant text-[13px] font-semibold tracking-[0.14em] text-[#a95151]">
           {guestGreeting.toUpperCase()}
         </p>
-        <p className="mt-2 font-script-bold text-3xl text-[#9a3636]">{guestLine}</p>
-        <div className="mx-auto mt-2 h-px w-32 bg-gradient-to-r from-transparent via-[#d68b8b] to-transparent" />
+        <p className="mt-1 font-script-bold text-2xl font-bold text-[#a95151]">{guestLine}</p>
+        <div className="mx-auto mt-1 h-3 w-64 rounded-full bg-gradient-to-r from-transparent via-[#4a3a3a]/35 to-transparent blur-[3px]" />
       </motion.div>
     </section>
   );

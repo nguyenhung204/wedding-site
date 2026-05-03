@@ -35,20 +35,20 @@ export default function CountdownInvitation() {
   return (
     <section className="relative">
       {/* Background photo with countdown overlay */}
-      <div className="relative h-[440px] w-full overflow-hidden">
+      <div className="relative mx-1 h-[520px] overflow-hidden rounded-t-[6px]">
         <Image
           src={config.photos.countdownBackground}
           alt=""
           fill
           sizes="500px"
-          className="object-cover"
+          className="object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f9f1ef]" />
-        <SectionReveal className="absolute inset-x-0 top-12 flex justify-center gap-2">
+        <SectionReveal className="absolute inset-x-0 top-8 flex justify-center gap-2">
           {boxes.map((b) => (
             <div
               key={b.l}
-              className="flex h-[58px] w-[58px] flex-col items-center justify-center rounded-md bg-[#9c3e3e]/90 text-white shadow-md"
+              className="flex h-[58px] w-[58px] flex-col items-center justify-center rounded-[3px] bg-[#9c3e3e]/92 text-white shadow-md"
             >
               <span className="font-cormorant text-2xl leading-none">
                 {String(b.v).padStart(2, "0")}

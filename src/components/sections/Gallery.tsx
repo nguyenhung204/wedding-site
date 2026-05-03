@@ -14,7 +14,7 @@ export default function Gallery() {
         <div className="flex flex-col gap-3">
           {photos.map((src, i) => (
             <SectionReveal key={src + i} delay={i * 0.1}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-md shadow-sm">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[3px] shadow-sm">
                 <Image src={src} alt="" fill sizes="320px" className="object-cover" />
               </div>
             </SectionReveal>

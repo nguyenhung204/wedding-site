@@ -38,7 +38,7 @@ export default function WeddingCard({ guestGreeting, guestName }: Props) {
       <LoadingSplash show={loading} />
       {config.effects.petals && opened && <PetalEffect />}
 
-      <main className="card-canvas">
+      <main className={`card-canvas ${opened ? "is-opened" : ""}`}>
         <Hero guestGreeting={guestGreeting} guestName={guestName} onOpen={() => setOpened(true)} />
         <CountdownInvitation />
         <Ceremony />

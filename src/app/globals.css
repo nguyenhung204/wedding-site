@@ -17,6 +17,7 @@ body {
   --font-serif: var(--font-playfair), "Playfair Display", serif;
   --font-script: var(--font-dancing), "Dancing Script", cursive;
   --font-script-bold: var(--font-dancing), "Dancing Script", cursive;
+  --font-bucthu: var(--font-pinyon), var(--font-dancing), cursive;
   --font-cormorant: var(--font-cormorant), "Cormorant Garamond", serif;
   --font-sans: var(--font-quicksand), "Quicksand", system-ui, sans-serif;
 }
@@ -44,11 +45,16 @@ body {
   box-shadow: 0 0 40px rgba(60, 30, 30, 0.08);
 }
 
+.card-canvas:not(.is-opened) > section:not(:first-child) {
+  display: none;
+}
+
 @layer utilities {
   .text-balance { text-wrap: balance; }
   .font-script { font-family: var(--font-script); }
   .font-script-bold { font-family: var(--font-script-bold); }
   .font-script-en { font-family: var(--font-sacramento), "Sacramento", cursive; }
+  .font-bucthu { font-family: var(--font-bucthu); }
   .font-serif { font-family: var(--font-serif); }
   .font-cormorant { font-family: var(--font-cormorant); }
 }
@@ -64,9 +70,9 @@ body {
 .flap-animate { animation: flap-open 1s ease-in-out forwards; transform-origin: top; }
 
 @keyframes letter-rise {
-  0%   { transform: translateY(0); opacity: 1; }
-  60%  { transform: translateY(-95%); opacity: 1; }
-  100% { transform: translateY(-95%); opacity: 1; }
+  0%   { transform: translate(-50%, 0); opacity: 1; }
+  60%  { transform: translate(-50%, -86px); opacity: 1; }
+  100% { transform: translate(-50%, -86px); opacity: 1; }
 }
 .letter-animate { animation: letter-rise 1.4s 0.4s ease-in-out forwards; }
 

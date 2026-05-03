@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import config from "@/lib/config";
 
 interface Props {
   src: string;
@@ -55,18 +57,8 @@ export default function AudioPlayer({ src, title, autoplay = true, open }: Props
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.5 }}
         >
-          <span className={playing ? "spin-slow" : ""}>
-            <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden>
-              <circle cx="16" cy="16" r="13" fill="#fff5f5" stroke="#e49696" strokeWidth="1.5" />
-              <circle cx="16" cy="16" r="3.2" fill="#a95151" />
-              <path
-                d="M14.6 6.5c4.6.8 7.7 3.9 8.5 8.5"
-                fill="none"
-                stroke="#e49696"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-              />
-            </svg>
+          <span className={`relative h-8 w-8 ${playing ? "spin-slow" : ""}`}>
+            <Image src={config.photos.illustrations.audioIcon} alt="" fill sizes="32px" className="object-contain" />
           </span>
           {!playing && (
             <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#a95151] text-[10px] text-white shadow">▶</span>
