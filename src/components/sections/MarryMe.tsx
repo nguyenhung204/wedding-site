@@ -10,16 +10,10 @@ export default function MarryMe() {
         <p className="font-cormorant text-2xl tracking-[0.4em] text-[#a95151]/30 mb-2">
           SWEET WEDDING
         </p>
-        <h2 className="font-cormorant text-5xl font-bold tracking-[0.3em] text-[#a95151]">
-          MARRY
-        </h2>
-        <h2 className="mt-1 font-cormorant text-5xl font-bold tracking-[0.3em] text-[#a95151]">
-          ME?
-        </h2>
       </SectionReveal>
 
-      <SectionReveal delay={0.2}>
-        <div className="relative mx-auto mt-8 grid w-full max-w-[420px] grid-cols-[1fr,82px] gap-4">
+      <SectionReveal delay={0.15}>
+        <div className="relative mx-auto mt-4 grid w-full max-w-[420px] grid-cols-[1fr,100px] gap-3">
           <div className="relative aspect-[3/4] overflow-hidden rounded-[3px] shadow-md">
             <Image
               src={config.photos.marryMeMain}
@@ -29,11 +23,11 @@ export default function MarryMe() {
               className="object-cover"
             />
           </div>
-          <div className="relative flex flex-col items-center justify-center font-cormorant text-[#cb8d8d]">
-            <span className="absolute -top-1 left-1/2 -translate-x-1/2 text-pink-300/80">♡</span>
-            <span className="mt-6 text-2xl tracking-[0.25em]">YES!</span>
-            <span className="mt-2 text-2xl tracking-[0.3em]">I DO</span>
-            <span className="mt-2 text-pink-300/80">♡</span>
+          <div className="relative flex flex-col items-center justify-center gap-2 font-cormorant text-[#cb8d8d]">
+            <span className="text-4xl text-pink-400/80">&#9829;</span>
+            <span className="text-[28px] font-bold tracking-[0.25em] text-[#a95151]">YES!</span>
+            <span className="text-[28px] font-bold tracking-[0.3em] text-[#a95151]">I DO</span>
+            <span className="text-4xl text-pink-400/80">&#9829;</span>
           </div>
         </div>
       </SectionReveal>

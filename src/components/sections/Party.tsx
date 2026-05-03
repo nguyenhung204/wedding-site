@@ -45,16 +45,7 @@ export default function Party() {
         </div>
       </SectionReveal>
 
-      <SectionReveal delay={0.5}>
-        <div className="mt-6 flex justify-center gap-6">
-          {party.schedule.map((s) => (
-            <div key={s.time} className="text-center">
-              <p className="font-cormorant text-xl text-[#9c3e3e]">{s.time}</p>
-              <p className="text-[12px] text-[#7e4f4f]">— {s.label} —</p>
-            </div>
-          ))}
-        </div>
-      </SectionReveal>
+
     </section>
   );
 }

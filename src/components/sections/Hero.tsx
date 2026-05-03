@@ -154,7 +154,7 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         className="absolute left-[145px] top-[585px] z-[5] w-[210px]"
       >
         <p className="font-sans text-[15px] font-bold uppercase leading-normal tracking-[1px] text-[#a95151]">
-          {guestGreeting.toUpperCase()} KÍNH MỜI
+          {guestGreeting.toUpperCase()}
         </p>
         <p className="mt-[4px] font-script-bold text-[26px] font-bold leading-normal text-[#a95151]">
           {guestLine}

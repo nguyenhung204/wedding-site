@@ -44,7 +44,7 @@ export default function CountdownInvitation() {
           className="object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f9f1ef]" />
-        <SectionReveal className="absolute inset-x-0 top-8 flex justify-center gap-2">
+        <SectionReveal className="absolute inset-x-0 bottom-12 flex justify-center gap-2">
           {boxes.map((b) => (
             <div
               key={b.l}

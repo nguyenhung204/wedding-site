@@ -11,7 +11,6 @@ export default function Rsvp({ defaultName = "" }: Props) {
   const [name, setName] = useState(defaultName);
   const [attending, setAttending] = useState<"yes" | "no">("yes");
   const [count, setCount] = useState(1);
-  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [busy, setBusy] = useState(false);
 
@@ -87,22 +86,12 @@ export default function Rsvp({ defaultName = "" }: Props) {
                   onChange={(e) => setCount(Number(e.target.value))}
                   className="mt-1 block w-full rounded border border-[#e1c7c7] bg-white px-3 py-2 outline-none focus:border-[#a95151]"
                 >
-                  {[1, 2, 3, 4, 5, 6].map((n) => (
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                     <option key={n} value={n}>
                       {n} người
                     </option>
                   ))}
                 </select>
-              </label>
-
-              <label className="block">
-                <span className="text-[#7e4f4f]">Lời chúc (tuỳ chọn)</span>
-                <textarea
-                  rows={3}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="mt-1 block w-full rounded border border-[#e1c7c7] bg-white px-3 py-2 outline-none focus:border-[#a95151]"
-                />
               </label>
 
               <button
