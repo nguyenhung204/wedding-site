@@ -9,6 +9,7 @@ import AutoScroll from "@/components/ui/AutoScroll";
 
 import Hero from "@/components/sections/Hero";
 import CountdownInvitation from "@/components/sections/CountdownInvitation";
+import InvitationMessage from "@/components/sections/InvitationMessage";
 import Ceremony from "@/components/sections/Ceremony";
 import Party from "@/components/sections/Party";
 import MarryMe from "@/components/sections/MarryMe";
@@ -16,6 +17,7 @@ import AboutUs from "@/components/sections/AboutUs";
 import SaveTheDate from "@/components/sections/SaveTheDate";
 import Gallery from "@/components/sections/Gallery";
 import Rsvp from "@/components/sections/Rsvp";
+import LoveQuote from "@/components/sections/LoveQuote";
 import Gift from "@/components/sections/Gift";
 import ThankYou from "@/components/sections/ThankYou";
 
@@ -43,6 +45,7 @@ export default function WeddingCard({ guestGreeting, guestName }: Props) {
         {opened && (
           <>
             <CountdownInvitation />
+            <InvitationMessage />
             <Ceremony />
             <Party />
             <MarryMe />
@@ -50,6 +53,7 @@ export default function WeddingCard({ guestGreeting, guestName }: Props) {
             <SaveTheDate />
             <Gallery />
             <Rsvp defaultName={guestName} />
+            <LoveQuote />
             <Gift />
             <ThankYou />
           </>
