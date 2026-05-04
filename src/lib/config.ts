@@ -30,7 +30,7 @@ export const config = {
       portrait: "/assets/groom-portrait.jpg",
       family: {
         title: "Nhà Trai",
-        father: "Ông : Trần Phú Trường",
+        father: "Ông: Trần Phú Trưởng",
         mother: "Bà : Trần Thị Ngân",
         address: "TP. Hà Nội",
       },
@@ -38,13 +38,13 @@ export const config = {
     bride: {
       shortName: "Lệ Giang",
       fullName: "Ngô Lệ Giang",
-      birthDate: "13/09/1999",
+      birthDate: "13/07/1999",
       hometown: "Hà Nội",
       portrait: "/assets/bride-portrait.jpg",
       family: {
         title: "Nhà Gái",
-        father: "Ông : Ngô Duy Hà",
-        mother: "Bà : Đinh Thị Ngọc",
+        father: "Ông : Ngô Duy Hưng",
+        mother: "Bà : Đinh Thị Hương",
         address: "TP. Hà Nội",
       },
     },

@@ -134,6 +134,7 @@ body {
   position: absolute;
   width: 0;
   height: 0;
+  inset: 0 auto auto 0;
 }
 
 .cinelove-front { z-index: 3; }
@@ -171,20 +172,17 @@ body {
   margin-left: auto;
   margin-right: auto;
   height: 90%;
-  top: 32%;
+  top: 5%;
   border-radius: 6px;
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
-  transition: transform 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s;
   overflow: hidden;
-  z-index: 2;
-}
-
-.cinelove-hero.is-opened .cinelove-letter {
-  top: 5%;
 }
 
 .cinelove-envelope.close .cinelove-letter {
-  opacity: 0;
+  z-index: 1;
+  transform: translateY(0);
+  transition: transform 1s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s;
 }
 
 .cinelove-letter::after {
@@ -198,7 +196,7 @@ body {
 .cinelove-envelope.open .cinelove-letter {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   transform: translateY(-136.199px);
-  transition: transform 1s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s, box-shadow 0.3s ease;
+  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s, z-index 0.5s;
   z-index: 2;
 }
 

@@ -73,7 +73,7 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         {!opened && (
           <motion.p
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 0.41, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.3, ease: "easeOut" }}
             className="absolute left-[160px] top-[237px] w-[180px] font-script-en text-[22px] font-bold leading-normal text-[#8b2f30]"
@@ -97,6 +97,11 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
             className="absolute inset-0 z-20 cursor-pointer bg-transparent focus:outline-none"
           />
           <div className={`cinelove-envelope ${opened ? "open" : "close"}`}>
+            <div className="cinelove-front cinelove-flap" />
+            <div className="cinelove-front cinelove-pocket" />
+            <div className="cinelove-wax">
+              <Image src={config.photos.illustrations.waxSeal} alt="" fill sizes="56px" className="object-contain" />
+            </div>
             <div className="cinelove-letter">
               <Image
                 src={config.photos.heroEnvelope}
@@ -106,11 +111,6 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
                 className="object-cover"
                 priority
               />
-            </div>
-            <div className="cinelove-front cinelove-flap" />
-            <div className="cinelove-front cinelove-pocket" />
-            <div className="cinelove-wax">
-              <Image src={config.photos.illustrations.waxSeal} alt="" fill sizes="56px" className="object-contain" />
             </div>
           </div>
 
@@ -151,12 +151,12 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.3, ease: "easeOut" }}
-        className="absolute left-[145px] top-[585px] z-[5] w-[210px]"
+        className="absolute left-[9px] top-[590px] z-[5] w-[472px] text-center"
       >
-        <p className="font-sans text-[15px] font-bold uppercase leading-normal tracking-[1px] text-[#a95151]">
-          {guestGreeting.toUpperCase()} KÍNH MỜI
+        <p className="font-sans text-[21px] font-bold uppercase leading-normal tracking-[1px] text-[#8b2f30]">
+          {guestGreeting.toUpperCase()}
         </p>
-        <p className="mt-[4px] font-script-bold text-[26px] font-bold leading-normal text-[#a95151]">
+        <p className="mt-[4px] font-bucthu text-[30px] font-bold leading-normal text-[#8b2f30]">
           {guestLine}
         </p>
         
