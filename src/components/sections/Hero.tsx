@@ -97,6 +97,11 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
             className="absolute inset-0 z-20 cursor-pointer bg-transparent focus:outline-none"
           />
           <div className={`cinelove-envelope ${opened ? "open" : "close"}`}>
+            <div className="cinelove-front cinelove-flap" />
+            <div className="cinelove-front cinelove-pocket" />
+            <div className="cinelove-wax">
+              <Image src={config.photos.illustrations.waxSeal} alt="" fill sizes="56px" className="object-contain" />
+            </div>
             <div className="cinelove-letter">
               <Image
                 src={config.photos.heroEnvelope}
@@ -106,11 +111,6 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
                 className="object-cover"
                 priority
               />
-            </div>
-            <div className="cinelove-front cinelove-flap" />
-            <div className="cinelove-front cinelove-pocket" />
-            <div className="cinelove-wax">
-              <Image src={config.photos.illustrations.waxSeal} alt="" fill sizes="56px" className="object-contain" />
             </div>
           </div>
 
