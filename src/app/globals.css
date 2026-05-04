@@ -122,10 +122,11 @@ body {
   inset: 0 auto auto 0;
   background-color: #812927;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), clip-path 0.5s 0.3s ease;
   cursor: pointer;
   animation: envelopeFloat 3s ease-in-out infinite;
   z-index: 1;
+  clip-path: inset(0 0 0 0);
 }
 
 .cinelove-front,
@@ -154,6 +155,10 @@ body {
   z-index: 1;
 }
 
+.cinelove-envelope.open {
+  clip-path: inset(-200px 0 0 0);
+}
+
 .cinelove-pocket {
   border-left: 215.05px solid #A33F3D;
   border-right: 215.05px solid #A33F3D;
@@ -171,20 +176,17 @@ body {
   margin-left: auto;
   margin-right: auto;
   height: 90%;
-  top: 32%;
+  top: 5%;
   border-radius: 6px;
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
-  transition: transform 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s, box-shadow 0.3s ease;
+  transition: opacity 0.3s 0.3s ease, transform 1s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s, box-shadow 0.3s ease;
   overflow: hidden;
   z-index: 2;
 }
 
-.cinelove-hero.is-opened .cinelove-letter {
-  top: 5%;
-}
-
 .cinelove-envelope.close .cinelove-letter {
   opacity: 0;
+  transform: translateY(0);
 }
 
 .cinelove-letter::after {
@@ -196,10 +198,11 @@ body {
 }
 
 .cinelove-envelope.open .cinelove-letter {
+  opacity: 1;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   transform: translateY(-136.199px);
-  transition: transform 1s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s, box-shadow 0.3s ease;
-  z-index: 2;
+  transition: opacity 0.3s 0.3s ease, transform 1s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0.5s, box-shadow 0.3s ease;
+  z-index: 6;
 }
 
 .cinelove-wax {
