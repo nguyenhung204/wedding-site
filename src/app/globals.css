@@ -155,6 +155,10 @@ body {
   z-index: 1;
 }
 
+.cinelove-envelope.open .cinelove-pocket {
+  z-index: 1;
+}
+
 .cinelove-pocket {
   border-left: 215.05px solid #A33F3D;
   border-right: 215.05px solid #A33F3D;
