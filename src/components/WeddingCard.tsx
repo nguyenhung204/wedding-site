@@ -17,7 +17,6 @@ import AboutUs from "@/components/sections/AboutUs";
 import SaveTheDate from "@/components/sections/SaveTheDate";
 import Gallery from "@/components/sections/Gallery";
 import Rsvp from "@/components/sections/Rsvp";
-import LoveQuote from "@/components/sections/LoveQuote";
 import Gift from "@/components/sections/Gift";
 import ThankYou from "@/components/sections/ThankYou";
 
@@ -53,7 +52,6 @@ export default function WeddingCard({ guestGreeting, guestName }: Props) {
             <SaveTheDate />
             <Gallery />
             <Rsvp defaultName={guestName} />
-            <LoveQuote />
             <Gift />
             <ThankYou />
           </>

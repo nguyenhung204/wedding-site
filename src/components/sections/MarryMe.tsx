@@ -13,21 +13,27 @@ export default function MarryMe() {
       </SectionReveal>
 
       <SectionReveal delay={0.15}>
-        <div className="relative mx-auto mt-4 grid w-full max-w-[420px] grid-cols-[1fr,100px] gap-3">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-[3px] shadow-md">
-            <Image
-              src={config.photos.marryMeMain}
-              alt=""
-              fill
-              sizes="320px"
-              className="object-cover"
-            />
+        <div className="relative mx-auto mt-4 w-full max-w-[420px]">
+          {/* "MARRY ME?" watermark text overlaid on the left */}
+          <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 z-10 font-cormorant text-[48px] font-medium uppercase leading-tight tracking-[4px] text-[#3a2a2a]/20">
+            MARRY<br />ME?
           </div>
-          <div className="relative flex flex-col items-center justify-center gap-2 font-cormorant text-[#cb8d8d]">
-            <span className="text-4xl text-pink-400/80">&#9829;</span>
-            <span className="text-[28px] font-bold tracking-[0.25em] text-[#a95151]">YES!</span>
-            <span className="text-[28px] font-bold tracking-[0.3em] text-[#a95151]">I DO</span>
-            <span className="text-4xl text-pink-400/80">&#9829;</span>
+          <div className="grid grid-cols-[1fr,100px] gap-3">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[3px] shadow-md">
+              <Image
+                src={config.photos.marryMeMain}
+                alt=""
+                fill
+                sizes="320px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative flex flex-col items-center justify-center gap-2 font-cormorant text-[#cb8d8d]">
+              <span className="text-4xl text-pink-400/80">&#9829;</span>
+              <span className="text-[28px] font-bold tracking-[0.25em] text-[#a95151]">YES!</span>
+              <span className="text-[28px] font-bold tracking-[0.3em] text-[#a95151]">I DO</span>
+              <span className="text-4xl text-pink-400/80">&#9829;</span>
+            </div>
           </div>
         </div>
       </SectionReveal>
