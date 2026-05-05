@@ -39,7 +39,7 @@ export const config = {
       shortName: "Anh Thư",
       fullName: "Nguyễn Lê Anh Thư",
       birthDate: "13/07/1999",
-      hometown: "Hà Nội",
+      hometown: "An Giang",
       portrait: "/assets/bride-portrait.jpg",
       family: {
         title: "Nhà Gái",
@@ -52,14 +52,14 @@ export const config = {
 
   // --- Dates ----------------------------------------------------
   // ISO 8601 — used for countdown
-  weddingDate: "2026-02-07T11:30:00+07:00",
+  weddingDate: "2026-05-10T11:30:00+07:00",
   display: {
-    dayOfWeek: "Thứ Bảy",
+    dayOfWeek: "Chủ Nhật",
     timeStr: "11:30",
-    day: 7,
-    month: 2,
+    day: 10,
+    month: 5,
     year: 2026,
-    lunar: "Tức ngày 20 tháng 12 âm Ất Tỵ",
+    lunar: "Tức ngày 20 tháng 11 âm Ất Tỵ",
   },
 
   // --- Ceremony / Party -----------------------------------------

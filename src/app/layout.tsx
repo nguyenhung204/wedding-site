@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sacramento, Playfair_Display, Quicksand, Cormorant_Garamond, Dancing_Script, Pinyon_Script, Allura } from "next/font/google";
+import { Sacramento, Playfair_Display, Quicksand, Cormorant_Garamond, Dancing_Script, Pinyon_Script, Allura } from "next/font/google";  
 import "./globals.css";
 import config from "@/lib/config";
 
