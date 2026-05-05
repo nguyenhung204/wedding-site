@@ -19,9 +19,9 @@ export default function Party() {
       {/* Big date row */}
       <SectionReveal delay={0.15}>
         <div className="mx-auto mt-6 flex max-w-[360px] items-center justify-between border-y border-[#d68b8b]/60 py-4 font-cormorant text-[#9c3e3e]">
-          <span className="text-lg tracking-widest">THÁNG {display.month}</span>
-          <span className="text-6xl leading-none">{display.day}</span>
-          <span className="text-lg tracking-widest">NĂM {display.year}</span>
+          <span className="text-lg tracking-widest translate-y-2">THÁNG {display.month}</span>
+          <span className="text-6xl leading-none translate-y-5">{display.day}</span>
+          <span className="text-lg tracking-widest translate-y-2">NĂM {display.year}</span>
         </div>
         <p className="mt-3 font-cormorant text-sm text-[#a07c7c]">({display.lunar})</p>
       </SectionReveal>
