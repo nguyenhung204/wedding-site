@@ -41,8 +41,14 @@ body {
   background: var(--bg);
   position: relative;
   overflow: hidden;
-  min-height: 682px;
   box-shadow: 0 0 40px rgba(60, 30, 30, 0.08);
+}
+
+/* On desktop/tablet keep the card a bit smaller and centered */
+@media (min-width: 768px) {
+  .card-canvas {
+    max-width: 460px;
+  }
 }
 
 .card-canvas:not(.is-opened)::after {
@@ -56,7 +62,7 @@ body {
 .card-canvas:not(.is-opened) > .cinelove-hero { z-index: 1000; }
 
 .card-canvas.is-opened {
-  min-height: 8264px;
+  min-height: auto;
 }
 
 @layer utilities {
@@ -71,13 +77,11 @@ body {
 
 .card-canvas:not(.is-opened) .cinelove-hero {
   position: relative;
-  height: 682px;
   z-index: 1000;
 }
 
 .card-canvas.is-opened .cinelove-hero {
   position: relative;
-  height: 682px;
   z-index: 1000;
 }
 

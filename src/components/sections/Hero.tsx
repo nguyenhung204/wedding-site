@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import config from "@/lib/config";
 
@@ -10,10 +10,25 @@ interface Props {
   onOpen?: () => void;
 }
 
+const DESIGN_WIDTH = 500;
+
 export default function Hero({ guestGreeting = "Trân trọng kính mời", guestName, onOpen }: Props) {
   const [opened, setOpened] = useState(false);
   const { groom, bride } = config.couple;
   const guestLine = guestName ?? "Quý khách quý";
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const measure = () => {
+      if (!wrapRef.current) return;
+      const w = wrapRef.current.offsetWidth;
+      setScale(Math.min(1, w / DESIGN_WIDTH));
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   const open = () => {
     if (opened) return;
@@ -21,8 +36,23 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
     onOpen?.();
   };
 
+  const heroHeight = 682;
+
   return (
-    <section className={`cinelove-hero text-center ${opened ? "is-opened" : ""}`}>
+    <section
+      ref={wrapRef}
+      className={`cinelove-hero text-center ${opened ? "is-opened" : ""}`}
+      style={{ height: heroHeight * scale }}
+    >
+      <div
+        className="relative"
+        style={{
+          width: DESIGN_WIDTH,
+          height: heroHeight,
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+        }}
+      >
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -159,8 +189,8 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         <p className="mt-[4px] font-bucthu text-[30px] font-bold leading-normal text-[#8b2f30]">
           {guestLine}
         </p>
-        
       </motion.div>
+      </div>
     </section>
   );
 }
