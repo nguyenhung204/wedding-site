@@ -66,7 +66,7 @@ body {
   --font-script: "HoaTay1", var(--font-dancing), "Dancing Script", cursive;
   --font-script-bold: "HoaTay1", var(--font-dancing), "Dancing Script", cursive;
   --font-bucthu: "BucThu", var(--font-pinyon), cursive;
-  --font-cormorant: "Belinda Avenue", var(--font-cormorant), "Cormorant Garamond", serif;
+  --font-cormorant: "Belinda Avenue", var(--font-cormorant-gf), "Cormorant Garamond", serif;
   --font-sans: var(--font-quicksand), "Quicksand", system-ui, sans-serif;
 }
 
