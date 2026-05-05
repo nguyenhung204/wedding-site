@@ -62,7 +62,7 @@ export default function AudioPlayer({ src, title, autoplay = true, open }: Props
             <Image src={config.photos.illustrations.audioDisc} alt="" fill sizes="30px" className="object-contain audio-disc-tint" />
           </span>
           {!playing && (
-            <span className="absolute inset-0 flex items-center justify-center rounded-full overflow-hidden pt-[15px]">
+            <span className="absolute inset-0 flex items-center justify-center rounded-full overflow-hidden">
               <span className="block w-full h-px bg-white rotate-45" />
             </span>
           )}

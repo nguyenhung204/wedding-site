@@ -15,7 +15,7 @@ const DESIGN_WIDTH = 500;
 export default function Hero({ guestGreeting = "Trân trọng kính mời", guestName, onOpen }: Props) {
   const [opened, setOpened] = useState(false);
   const { groom, bride } = config.couple;
-  const guestLine = guestName ?? "Quý khách quý";
+  const guestLine = guestName ?? "Quý khách";
   const wrapRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
 
