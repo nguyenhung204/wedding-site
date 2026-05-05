@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom fonts from cinelove.me */
+@font-face {
+  font-family: 'BucThu';
+  src: url('/fonts/bucthu.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'HoaTay1';
+  src: url('/fonts/hoatay1.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Belinda Avenue';
+  src: url('/fonts/belinda-avenue.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Carlytte';
+  src: url('/fonts/carlytte.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ShowcaseSans';
+  src: url('/fonts/showcasesans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'The Hamstter';
+  src: url('/fonts/the-hamstter.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chillatos';
+  src: url('/fonts/chillatos.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #f9f1ef;
   --primary: #a95151;
@@ -10,15 +61,12 @@
   --muted: #b78a8a;
 }
 
-/* The next/font CSS variables (--font-dancing, --font-quicksand, …) live on
-   the <body> element, so we declare our composed --font-* variables there
-   too — otherwise referencing them at :root yields an empty value. */
 body {
   --font-serif: var(--font-playfair), "Playfair Display", serif;
-  --font-script: var(--font-dancing), "Dancing Script", cursive;
-  --font-script-bold: var(--font-dancing), "Dancing Script", cursive;
-  --font-bucthu: var(--font-pinyon), var(--font-dancing), cursive;
-  --font-cormorant: var(--font-cormorant), "Cormorant Garamond", serif;
+  --font-script: "HoaTay1", var(--font-dancing), "Dancing Script", cursive;
+  --font-script-bold: "HoaTay1", var(--font-dancing), "Dancing Script", cursive;
+  --font-bucthu: "BucThu", var(--font-pinyon), cursive;
+  --font-cormorant: "Belinda Avenue", var(--font-cormorant), "Cormorant Garamond", serif;
   --font-sans: var(--font-quicksand), "Quicksand", system-ui, sans-serif;
 }
 
@@ -69,7 +117,7 @@ body {
   .text-balance { text-wrap: balance; }
   .font-script { font-family: var(--font-script); }
   .font-script-bold { font-family: var(--font-script-bold); }
-  .font-script-en { font-family: var(--font-sacramento), "Sacramento", cursive; }
+  .font-script-en { font-family: "Belinda Avenue", var(--font-sacramento), "Sacramento", cursive; }
   .font-bucthu { font-family: var(--font-bucthu); }
   .font-serif { font-family: var(--font-serif); }
   .font-cormorant { font-family: var(--font-cormorant); }
