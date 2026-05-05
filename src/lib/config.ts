@@ -14,7 +14,7 @@ export const config = {
   // --- Meta -----------------------------------------------------
   meta: {
     siteName: "Wedding Invitation",
-    title: "Thiệp mời cưới | Phú Danh ❤ Lệ Giang",
+    title: "Thiệp mời cưới | Văn Hoàng ❤ Anh Thư",
     description: "Thân mời quý vị đến chung vui cùng chúng tôi.",
     locale: "vi-VN",
     ogImage: "/assets/hero.jpg",
@@ -23,29 +23,29 @@ export const config = {
   // --- Couple ---------------------------------------------------
   couple: {
     groom: {
-      shortName: "Phú Danh",
-      fullName: "Trần Phú Danh",
+      shortName: "Văn Hoàng",
+      fullName: "Đoàn Văn Hoàng",
       birthDate: "03/09/1996",
-      hometown: "Nam Định",
+      hometown: "Phú Yên",
       portrait: "/assets/groom-portrait.jpg",
       family: {
         title: "Nhà Trai",
         father: "Ông: Trần Phú Trưởng",
         mother: "Bà : Trần Thị Ngân",
-        address: "TP. Hà Nội",
+        address: "Phú Yên",
       },
     },
     bride: {
-      shortName: "Lệ Giang",
-      fullName: "Ngô Lệ Giang",
+      shortName: "Anh Thư",
+      fullName: "Nguyễn Lê Anh Thư",
       birthDate: "13/07/1999",
       hometown: "Hà Nội",
       portrait: "/assets/bride-portrait.jpg",
       family: {
         title: "Nhà Gái",
-        father: "Ông : Ngô Duy Hưng",
+        father: "Ông : Nguyễn Duy Hưng",
         mother: "Bà : Đinh Thị Hương",
-        address: "TP. Hà Nội",
+        address: "An Giang",
       },
     },
   },

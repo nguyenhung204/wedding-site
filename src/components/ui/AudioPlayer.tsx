@@ -18,16 +18,18 @@ interface Props {
 export default function AudioPlayer({ src, title, autoplay = true, open }: Props) {
   const ref = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
+  const didAutoplay = useRef(false);
 
   useEffect(() => {
-    if (!open || !ref.current) return;
-    if (autoplay && !playing) {
+    if (!open || !ref.current || didAutoplay.current) return;
+    if (autoplay) {
+      didAutoplay.current = true;
       ref.current
         .play()
         .then(() => setPlaying(true))
         .catch(() => setPlaying(false));
     }
-  }, [open, autoplay, playing]);
+  }, [open, autoplay]);
 
   const toggle = async () => {
     if (!ref.current) return;

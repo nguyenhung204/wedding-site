@@ -54,7 +54,8 @@ export default function AutoScroll({ enabled, speed, active }: Props) {
     <button
       onClick={() => setPaused((p) => !p)}
       aria-label={paused ? "Bật tự cuộn" : "Tạm dừng tự cuộn"}
-      className="fixed left-4 top-20 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-[#a95151] shadow"
+      title="Toggle auto-scroll"
+      className="fixed left-4 top-4 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-[#a95151] shadow"
     >
       {paused ? (
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden>
