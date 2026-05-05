@@ -183,7 +183,7 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         transition={{ duration: 1.3, ease: "easeOut" }}
         className="absolute left-[9px] top-[590px] z-[5] w-[472px] text-center"
       >
-        <p className="font-sans text-[21px] font-bold uppercase leading-normal tracking-[1px] text-[#8b2f30]">
+        <p className="text-[21px] font-bold uppercase leading-normal tracking-[1px] text-[#8b2f30]" style={{ fontFamily: "'ShowcaseSans', var(--font-quicksand), 'Quicksand', sans-serif" }}>
           {guestGreeting.toUpperCase()}
         </p>
         <p className="mt-[4px] font-bucthu text-[30px] font-bold leading-normal text-[#8b2f30]">
