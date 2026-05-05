@@ -1,17 +1,15 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import WishesModal from "./WishesModal";
 
 interface Props {
   open: boolean;
 }
 
-/**
- * Bottom-right floating toolbar with a "send blessing" pill, like/heart and
- * scroll-to-RSVP shortcut — equivalent to the toolbar in the source.
- */
 export default function BottomToolbar({ open }: Props) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
+  const [wishesOpen, setWishesOpen] = useState(false);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -21,22 +19,27 @@ export default function BottomToolbar({ open }: Props) {
     <AnimatePresence>
       {open && (
         <>
-          {/* Blessing input (left, attached to bottom of card) */}
+          <WishesModal isOpen={wishesOpen} onClose={() => setWishesOpen(false)} />
+
+          {/* Blessing button (left, attached to bottom of card) */}
           <motion.button
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 30 }}
             transition={{ delay: 0.4 }}
-            onClick={() => scrollTo("rsvp")}
+            onClick={() => setWishesOpen(true)}
             className={`fixed bottom-5 z-40 flex items-center gap-2 rounded-full bg-white/85 px-4 py-2 text-sm text-[#7a5f5f] shadow-md backdrop-blur-sm transition ${
               collapsed ? "opacity-0 pointer-events-none" : ""
             }`}
-            style={{ left: "calc(50% - 220px)" }}
+            style={{ left: "max(12px, calc(50% - 220px))" }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M21 12a8 8 0 1 1-3.5-6.6L21 4l-1 4-3.6-1" stroke="#a95151" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
             Gửi lời chúc…
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#7a5f5f" aria-hidden>
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+              <circle cx="8" cy="10" r="1"/>
+              <circle cx="12" cy="10" r="1"/>
+              <circle cx="16" cy="10" r="1"/>
+            </svg>
           </motion.button>
 
           {/* Right-side mini-toolbar */}
@@ -46,7 +49,7 @@ export default function BottomToolbar({ open }: Props) {
             exit={{ opacity: 0, y: 30 }}
             transition={{ delay: 0.5 }}
             className="fixed bottom-5 z-40 flex flex-col items-center gap-2"
-            style={{ right: "calc(50% - 248px)" }}
+            style={{ right: "max(12px, calc(50% - 218px))" }}
           >
             {/* Toggle button */}
             <button
