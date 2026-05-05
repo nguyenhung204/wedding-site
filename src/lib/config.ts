@@ -137,13 +137,13 @@ export const config = {
       {
         side: "groom" as const,
         bankName: "Vietcombank",
-        accountName: "TRAN PHU DANH",
+        accountName: "DOAN VAN HOANG",
         accountNumber: "0123456789",
       },
       {
         side: "bride" as const,
         bankName: "Techcombank",
-        accountName: "NGO LE GIANG",
+        accountName: "NGUYEN LE ANH THU",
         accountNumber: "9876543210",
       },
     ],
