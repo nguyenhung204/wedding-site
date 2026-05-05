@@ -260,6 +260,14 @@ body {
 }
 .spin-slow { animation: slow-spin 8s linear infinite; }
 
+/* Audio disc spinning (matches original 5s linear) */
+@keyframes audio-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.audio-spin { animation: audio-rotate 5s linear infinite; }
+.audio-disc-tint { filter: none; mix-blend-mode: normal; background: #e49696; }
+
 /* Calligraphy hand-write */
 @keyframes hand-write-in {
   from { clip-path: inset(0 100% 0 0); opacity: 0; }

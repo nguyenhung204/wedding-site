@@ -113,6 +113,11 @@ export const config = {
       weddingElement: "/assets/wedding-element.png",
       waxSeal: "/assets/wax-seal.webp",
       audioIcon: "/assets/audio-icon.png",
+      audioDisc: "/assets/audio-disc.png",
+      calendarHeart: "/assets/calendar-heart-fingerprint.png",
+      timelineWelcome: "/assets/timeline-welcome.png",
+      timelineCeremony: "/assets/timeline-ceremony.png",
+      timelineParty: "/assets/timeline-party.png",
     },
   },
 
