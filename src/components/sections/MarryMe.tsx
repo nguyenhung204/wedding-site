@@ -16,13 +16,13 @@ export default function MarryMe() {
         <div className="relative mx-auto mt-3 w-full">
           {/* Row 1: MARRY ME? text on left + photo on right */}
           <div className="flex items-stretch" style={{ gap: "6px" }}>
-            <div className="relative w-[38%] flex-shrink-0 overflow-hidden rounded-[2px]">
-              <div className="absolute inset-0 bg-[#f5e4e1]/40" />
-              <div className="relative z-10 flex h-full flex-col justify-center pl-3 pr-1 py-4">
-                <span className="font-cormorant text-[56px] font-semibold uppercase leading-[1] tracking-[5px] text-[#3a2a2a]/15">
+            <div className="relative z-10 w-[38%] flex-shrink-0 overflow-hidden rounded-[2px]">
+              <div className="absolute inset-0 bg-[#f5e4e1]/40 rounded-[2px]" />
+              <div className="relative z-10 flex h-full flex-col justify-center px-3 py-4">
+                <span className="font-cormorant text-[42px] font-semibold uppercase leading-[1.1] tracking-[3px] text-[#3a2a2a]/25">
                   MARRY
                 </span>
-                <span className="font-cormorant text-[56px] font-semibold uppercase leading-[1] tracking-[5px] text-[#3a2a2a]/15 mt-3 ml-6">
+                <span className="font-cormorant text-[42px] font-semibold uppercase leading-[1.1] tracking-[3px] text-[#3a2a2a]/25 mt-2 ml-4">
                   ME?
                 </span>
               </div>
