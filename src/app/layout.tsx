@@ -34,7 +34,7 @@ const quicksand = Quicksand({
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "vietnamese"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  variable: "--font-cormorant-gf",
   display: "swap",
 });
 const dancing = Dancing_Script({
