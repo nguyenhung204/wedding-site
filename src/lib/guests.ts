@@ -13,10 +13,6 @@ export interface GuestEntry {
 }
 
 const guests: Record<string, GuestEntry> = {
-  "EMT-HAGTH2": {
-    greeting: "Thân mời",
-    name: "Em Thư và người thương",
-  },
   "demo": {
     greeting: "Trân trọng kính mời",
     name: "Quý khách",

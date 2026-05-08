@@ -118,6 +118,7 @@ export const config = {
       timelineWelcome: "/assets/timeline-welcome.png",
       timelineCeremony: "/assets/timeline-ceremony.png",
       timelineParty: "/assets/timeline-party.png",
+      heart: "/assets/heart.png",
     },
   },
 

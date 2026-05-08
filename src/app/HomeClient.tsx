@@ -19,5 +19,5 @@ export default function HomeClient() {
     name = decodeURIComponent(guestId).replace(/[-_]/g, " ");
   }
 
-  return <WeddingCard guestGreeting={greeting} guestName={name} />;
+  return <WeddingCard guestId={guestId ?? undefined} guestGreeting={greeting} guestName={name} />;
 }

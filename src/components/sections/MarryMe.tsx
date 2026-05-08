@@ -50,9 +50,14 @@ export default function MarryMe() {
               />
             </div>
             <div className="flex flex-1 flex-col items-center justify-end rounded-[3px] bg-[#fdf0ef] py-6 px-2">
-              <div className="relative mb-2">
-                <span className="text-[32px] text-pink-400/60 absolute -top-2 -left-1">&#10084;</span>
-                <span className="text-[24px] text-pink-300/70 relative top-1 left-3">&#10084;</span>
+              <div className="relative mb-2 h-16 w-16">
+                  <Image
+                    src={config.photos.illustrations.heart}
+                    alt=""
+                    fill
+                    sizes="128px"
+                    className="object-contain"
+                  />
               </div>
               <span className="font-cormorant text-[36px] font-bold tracking-[0.2em] text-[#c9a0a0] mt-4">
                 YES!

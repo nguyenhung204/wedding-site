@@ -27,7 +27,7 @@ export default function SaveTheDate() {
   return (
     <section className="relative px-6 py-14">
       <SectionReveal>
-        <p className="text-center font-cormorant text-3xl tracking-[0.18em] text-[#9c3e3e]">
+        <p className="text-center font-script text-3xl tracking-[0.18em] text-[#9c3e3e]">
           Save the date
         </p>
       </SectionReveal>

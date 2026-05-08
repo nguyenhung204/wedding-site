@@ -57,7 +57,7 @@ export default function Hero({ guestGreeting = "Trân trọng kính mời", gues
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.3, ease: "easeOut" }}
-        className="absolute left-[156.35px] top-[78.48px] w-[190px] font-sans text-[26px] font-medium uppercase leading-normal tracking-[2px] text-[#834343]"
+        className="absolute left-[156.35px] top-[78.48px] w-[190px] text-[26px] font-medium uppercase leading-normal tracking-[2px] text-[#834343]"
       >
         Thiệp mời
       </motion.h2>

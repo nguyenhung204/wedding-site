@@ -5,23 +5,34 @@ import SectionReveal from "@/components/ui/SectionReveal";
 
 interface Props {
   defaultName?: string;
+  guestId?: string;
 }
 
-export default function Rsvp({ defaultName = "" }: Props) {
+export default function Rsvp({ defaultName = "", guestId }: Props) {
   const [name, setName] = useState(defaultName);
   const [attending, setAttending] = useState<"yes" | "no">("yes");
   const [count, setCount] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setBusy(true);
-    // TODO: replace with your own RSVP backend (e.g. /api/rsvp).
-    // For now we just simulate success so the UX still feels real.
-    await new Promise((r) => setTimeout(r, 700));
-    setBusy(false);
-    setSubmitted(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ guestId, attending, count }),
+      });
+      if (!res.ok) throw new Error("Lỗi kết nối, vui lòng thử lại.");
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Đã có lỗi xảy ra.");
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -48,8 +59,8 @@ export default function Rsvp({ defaultName = "" }: Props) {
                 <input
                   required
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="mt-1 block w-full rounded border border-[#e1c7c7] bg-white px-3 py-2 outline-none focus:border-[#a95151]"
+                  readOnly
+                  className="mt-1 block w-full rounded border border-[#e1c7c7] bg-gray-100 px-3 py-2 outline-none cursor-not-allowed text-[#7e4f4f]"
                 />
               </label>
 
@@ -101,6 +112,9 @@ export default function Rsvp({ defaultName = "" }: Props) {
               >
                 {busy ? "Đang gửi…" : "Gửi xác nhận"}
               </button>
+              {error && (
+                <p className="text-center text-xs text-red-500">{error}</p>
+              )}
             </form>
           )}
         </div>

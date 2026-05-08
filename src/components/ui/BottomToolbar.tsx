@@ -5,9 +5,11 @@ import WishesModal from "./WishesModal";
 
 interface Props {
   open: boolean;
+  guestId?: string;
+  guestName?: string;
 }
 
-export default function BottomToolbar({ open }: Props) {
+export default function BottomToolbar({ open, guestId, guestName }: Props) {
   const [collapsed, setCollapsed] = useState(true);
   const [wishesOpen, setWishesOpen] = useState(false);
 
@@ -19,18 +21,16 @@ export default function BottomToolbar({ open }: Props) {
     <AnimatePresence>
       {open && (
         <>
-          <WishesModal isOpen={wishesOpen} onClose={() => setWishesOpen(false)} />
+          <WishesModal isOpen={wishesOpen} onClose={() => setWishesOpen(false)} guestId={guestId} defaultName={guestName} />
 
-          {/* Blessing button (left, attached to bottom of card) */}
+          {/* Blessing button (left) — always visible when card is open */}
           <motion.button
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 30 }}
             transition={{ delay: 0.4 }}
             onClick={() => setWishesOpen(true)}
-            className={`fixed bottom-5 z-40 flex items-center gap-2 rounded-full bg-white/85 px-4 py-2 text-sm text-[#7a5f5f] shadow-md backdrop-blur-sm transition ${
-              collapsed ? "opacity-0 pointer-events-none" : ""
-            }`}
+            className="fixed bottom-5 z-[200] flex items-center gap-2 rounded-full bg-white/85 px-4 py-2 text-sm text-[#7a5f5f] shadow-md backdrop-blur-sm"
             style={{ left: "max(12px, calc(50% - 220px))" }}
           >
             Gửi lời chúc…

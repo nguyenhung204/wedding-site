@@ -58,27 +58,6 @@ export default function CountdownInvitation() {
           ))}
         </SectionReveal>
       </div>
-
-      {/* Invitation panel */}
-      <div className="px-6 pt-2 pb-12 text-center">
-        <SectionReveal>
-          <p className="font-cormorant tracking-[0.55em] text-[#9c3e3e]">
-            <span className="inline-block underline-grow underline decoration-[#9c3e3e]/60 underline-offset-[6px]">
-              I N V I T A T I O N
-            </span>
-          </p>
-        </SectionReveal>
-
-        <SectionReveal delay={0.15}>
-          <div className="mx-auto mt-5 max-w-[380px] rounded-md bg-[#fbe4e4]/60 px-5 py-5 text-[13.5px] leading-relaxed text-[#7e4f4f]">
-            {config.invitationMessage.map((line, i) => (
-              <p key={i} className={i === 0 ? "" : "mt-2"}>
-                {line}
-              </p>
-            ))}
-          </div>
-        </SectionReveal>
-      </div>
     </section>
   );
 }

@@ -12,7 +12,7 @@ export default function InvitationMessage() {
       </SectionReveal>
 
       <SectionReveal delay={0.15}>
-        <div className="mx-auto mt-6 max-w-[380px] space-y-4 font-script text-[15px] leading-relaxed text-[#5e3a3a]">
+        <div className="mx-auto mt-6 max-w-[380px] space-y-4  font-script text-[18px] leading-relaxed text-[#5e3a3a]">
           {config.invitationMessage.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}

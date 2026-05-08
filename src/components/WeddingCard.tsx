@@ -18,14 +18,16 @@ import SaveTheDate from "@/components/sections/SaveTheDate";
 import Gallery from "@/components/sections/Gallery";
 import Rsvp from "@/components/sections/Rsvp";
 import Gift from "@/components/sections/Gift";
+import WishWall from "@/components/sections/WishWall";
 import ThankYou from "@/components/sections/ThankYou";
 
 interface Props {
+  guestId?: string;
   guestGreeting?: string;
   guestName?: string;
 }
 
-export default function WeddingCard({ guestGreeting, guestName }: Props) {
+export default function WeddingCard({ guestId, guestGreeting, guestName }: Props) {
   const [loading, setLoading] = useState(true);
   const [opened, setOpened] = useState(false);
 
@@ -51,8 +53,9 @@ export default function WeddingCard({ guestGreeting, guestName }: Props) {
             <AboutUs />
             <SaveTheDate />
             <Gallery />
-            <Rsvp defaultName={guestName} />
+            <Rsvp defaultName={guestName} guestId={guestId} />
             <Gift />
+            <WishWall guestName={guestName} guestId={guestId} />
             <ThankYou />
           </>
         )}
@@ -64,7 +67,7 @@ export default function WeddingCard({ guestGreeting, guestName }: Props) {
         autoplay={config.audio.autoplay}
         open={opened}
       />
-      <BottomToolbar open={opened} />
+      <BottomToolbar open={opened} guestId={guestId} guestName={guestName} />
       <AutoScroll
         enabled={config.effects.autoScroll.enabled}
         speed={config.effects.autoScroll.speed}
